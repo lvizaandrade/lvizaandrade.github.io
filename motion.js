@@ -53,20 +53,4 @@
       card.style.removeProperty('--motion-ry');
     });
   });
-
-  if (!reduce && matchMedia('(pointer:fine)').matches) {
-    const cursor = document.createElement('div');
-    cursor.className = 'motion-cursor';
-    cursor.setAttribute('aria-hidden', 'true');
-    body.append(cursor);
-    addEventListener('pointermove', event => {
-      cursor.style.opacity = '1';
-      cursor.style.left = `${event.clientX}px`;
-      cursor.style.top = `${event.clientY}px`;
-    });
-    document.querySelectorAll('a,button,.motion-pop').forEach(el => {
-      el.addEventListener('pointerenter', () => cursor.classList.add('is-active'));
-      el.addEventListener('pointerleave', () => cursor.classList.remove('is-active'));
-    });
-  }
 })();

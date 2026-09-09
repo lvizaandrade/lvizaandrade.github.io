@@ -8,7 +8,5 @@
 .motion-ready a:hover,.motion-ready button:hover{transform:translateY(-2px)}
 .motion-ready img{transition:transform .65s cubic-bezier(.2,.8,.2,1),filter .4s ease}
 .motion-ready .motion-pop:hover img,.motion-ready figure:hover img,.motion-ready .phone:hover img{transform:scale(1.025)}
-.motion-cursor{position:fixed;z-index:9999;width:14px;height:14px;border:2px solid var(--motion-accent);border-radius:50%;left:0;top:0;transform:translate(-50%,-50%);pointer-events:none;opacity:0;transition:width .18s,height .18s,background .18s,opacity .18s;mix-blend-mode:multiply}
-.motion-cursor.is-active{width:34px;height:34px;background:color-mix(in srgb,var(--motion-accent) 18%,transparent)}
-@media(max-width:800px),(pointer:coarse){.motion-cursor{display:none}.motion-ready .motion-pop:hover{transform:translateY(-4px)}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.motion-progress,.motion-cursor{display:none}.motion-ready .motion-reveal{opacity:1;transform:none;filter:none;transition:none}.motion-ready *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+@media(max-width:800px),(pointer:coarse){.motion-ready .motion-pop:hover{transform:translateY(-4px)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.motion-progress{display:none}.motion-ready .motion-reveal{opacity:1;transform:none;filter:none;transition:none}.motion-ready *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
