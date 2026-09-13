@@ -182,8 +182,9 @@
   }
 </style>
 <link href="motion.css" rel="stylesheet">
+<link href="case-editorial.css" rel="stylesheet">
 </head>
-<body id="artifacts-component-root-html">
+<body id="artifacts-component-root-html" class="case-editorial case-editorial-maps">
 
 
 
@@ -230,35 +231,35 @@
 <div class="wrap">
 
 <!-- 01: EXECUTIVE SUMMARY -->
-<section id="exec">
+<section id="exec" data-chapter="Overview">
   
   <div class="snum c1">Executive Summary</div>
   <h2>The <em>summary</em></h2>
   <div class="lead-block">
     <span class="tag m">Challenge</span>
-    <p>Google Maps excels at getting people from A to B. It wasn't built for the moment before that, when someone doesn't know where to go yet. Its search still runs on keywords, its ranking ignores who's asking, and it has almost no AI-driven personalization in the discovery layer.</p>
+    <p>Google Maps is meant for getting people from A to B. It wasn't built for the moment before that, when someone doesn't know where to go yet. Its search still runs on keywords, with rankings not considering who's asking, and it has almost no AI-driven personalization in its discovery features.</p>
   </div>
   <div class="lead-block">
     <span class="tag t">Solution</span>
-    <p>An intent-based discovery experience: natural language search, moment-based collections, recommendations that explain themselves, and a lightweight profile system that matches you with people who have similar backgrounds and taste so their discoveries surface in your results.</p>
+    <p>An intent-based discovery experience: natural language search, moment-based collections, recommendations that explain themselves, and a profile system that matches you with people who have similar backgrounds and taste so their discoveries surface in your results.</p>
   </div>
   <div class="lead-block">
     <span class="tag g">Impact</span>
-    <p>Well-executed personalization typically lifts engagement 10–15% (McKinsey, 2021). That's what this concept is centered around, improving user experience and filling the main gap that exists within Maps.</p>
+    <p>Well-executed personalization typically increases engagement 10–15% (McKinsey, 2021). That's what this concept is centered on, improving user experience and filling the main gap that exists within Maps.</p>
   </div>
   <div class="stat-row">
-    <div class="stat m"><div class="n">~40%</div><div class="d">of 18–24 year-olds skip Maps entirely for local discovery — Google's own internal research, 2022</div></div>
-    <div class="stat t"><div class="n">10–15%</div><div class="d">typical engagement lift from personalization, across industries (McKinsey benchmark)</div></div>
-    <div class="stat g"><div class="n">3×</div><div class="d">more likely to return to an app that remembers context, per research on habit-forming products</div></div>
+    <div class="stat m"><div class="n">~40%</div><div class="d">"of young people when they’re looking for a place for lunch, they don’t go to Google Maps or Search...they go to TikTok or Instagram.” (TechCrunch)</div></div>
+    <div class="stat t"><div class="n">60%</div><div class="d">typical engagement increase from personalization, across industries (FT Strategies)</div></div>
+    <div class="stat g"><div class="n">76%</div><div class="d">more likely to consider apps with personalization features (McKinsey)</div></div>
   </div>
 </section>
 
 <!-- 02: CONTEXT & PROBLEM -->
-<section id="context">
+<section id="context" data-chapter="Problem">
   
   <div class="snum c2">Context &amp; Problem</div>
   <h2>Where Maps <em>falls short</em></h2>
-  <p><b>Business situation.</b> Navigation is a solved problem. Now, the new competition is discovery, and Maps is losing it to apps that were never built for maps at all.</p>
+  <p><b>Business situation.</b> Navigation is a solved problem. Now, the new competition is discovery, and Maps is losing to apps that were never built for navigation at all.</p>
 
   <div class="comp-grid">
     <div class="comp-col maps">
@@ -298,7 +299,7 @@
     <div class="src">— research interview, solo traveler, 24</div>
   </div>
 
-  <p><b>User problem.</b> Today Maps ranks everything by relevance, distance, and prominence, which mostly means review volume and keyword matches. It treats every search as a transaction, without any real intent behind the results. Someone searching "brunch" might want a two-hour catch-up with a friend or a quick plate before a flight. The result is the same either way.</p>
+  <p><b>User problem.</b> Today Maps ranks everything by relevance, distance, and prominence, which mostly means review volume and keyword matches. Searches are almost transactional, without any real personalization behind the results. Someone searching "brunch" might want a two-hour catch-up with a friend or a quick plate before a flight. The result is the same either way.</p>
 
   <!-- Ranking diagram -->
   <div class="diagram">
@@ -322,19 +323,19 @@
   </div>
 
   <ul class="plain">
-    <li>Tourist-heavy spots crowd out what locals actually recommend</li>
+        <li>Tourist-heavy spots overpower what locals actually recommend</li>
     <li>Generic results disconnected from the moment someone is in</li>
     <li>Hard to read a neighborhood's personality before showing up</li>
-    <li>Decision fatigue: too many similar options, no reason to pick one</li>
+        <li>Too many similar options, no reason to pick one</li>
   </ul>
 </section>
 
 <!-- 03: APPROACH & PROCESS -->
-<section id="approach">
+<section id="approach" data-chapter="Process">
   
   <div class="snum c3">Approach &amp; Process</div>
   <h2>Getting to <em>the idea</em></h2>
-  <p><b>Hypothesis.</b> If Maps understands who is searching and why, not just what they typed, it can compete for the moments people now spend on other apps, and it has something those apps don't: the ability to actually get you there.</p>
+  <p><b>Hypothesis.</b> If Maps understands who is searching and why, it can compete for the moments people now spend on other apps, and it has something those apps don't: the ability to actually get you there.</p>
   <p><b>Research method.</b> Reviewed discovery experiences across Google Maps, TikTok, Instagram, Reddit, Airbnb Experiences, Yelp, and Apple Maps. Interview questions focused on real decisions: when was the last time you spent 10+ minutes deciding where to eat, how do you actually find restaurants while traveling, what makes you skip Maps entirely.</p>
 
   <div class="persona-row">
@@ -352,30 +353,30 @@
 
   <div class="decision">
     <div class="dl">Decision 01</div>
-    <h4>Conversation over keywords</h4>
-    <p>Replace the search bar with natural language input. Instead of triggering filters, a typed or spoken intent shapes the entire result set.</p>
+    <h4>Conversation instead of just keywords</h4>
+    <p>Replace the search bar with natural language input. Instead of typing keywords, explain exactly what you want out of the result.</p>
     <div class="swap"><s>"pizza"</s> → <b>"late-night pizza with outdoor seating, somewhere not too loud"</b></div>
   </div>
   <div class="decision">
     <div class="dl">Decision 02</div>
     <h4>Moments over categories</h4>
-    <p>Instead of Restaurants / Coffee / Bars, surface collections built around what someone is actually trying to do.</p>
+    <p>Instead of Restaurants / Coffee / Bars, surface collections built around what someone is actually trying to do in the moment</p>
     <div class="swap"><s>Restaurants, Coffee, Bars</s> → <b>Golden Hour Views · Date Night · Rainy Day · Slow Sunday Morning</b></div>
   </div>
   <div class="decision">
     <div class="dl">Decision 03</div>
     <h4>Explain, don't just rate</h4>
-    <p>A star rating tells you nothing about whether a place fits your moment. Recommendations should explain why this place, for this search.</p>
+    <p>A star rating tells nothing about whether a place fits for the moment. Recommendations should explain why this place, for this search.</p>
     <div class="swap"><s>★ 4.7 · 842 reviews</s> → <b>"People stay ~2 hrs · mentioned for the patio and live music"</b></div>
   </div>
 </section>
 
 <!-- 04: PROFILE SYSTEM (new dedicated section) -->
-<section id="profiles">
+<section id="profiles" data-chapter="Personalization">
   
   <div class="snum c4">Profile System</div>
   <h2>Discovery through <em>people like you</em></h2>
-  <p>The answer to improved discovery isn't just keyword matching, it's knowing who's asking. Right now Maps treats every user identically. This concept adds a simple, opt-in profile layer that does two things: it makes your own results more relevant, and it contributes to a network where your saves and visits help others with similar profiles discover places too.</p>
+  <p>The answer to improved discovery isn't just keyword matching, it's understanding who's asking. Right now Maps treats every user identically. This proposed concept adds a simple, opt-in profile layer that does two things: it makes your own results more relevant, and it contributes to a network where your saves and visits help others with similar profiles discover places too.</p>
 
   <!-- Onboarding flow diagram -->
   <div class="onboard-flow">
@@ -392,14 +393,14 @@
       <rect x="160" y="30" width="116" height="52" rx="6" fill="#F8F1E3" stroke="rgba(42,18,16,0.16)"></rect>
       <text x="218" y="52" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#1F4B45" font-weight="600">STEP 2</text>
       <text x="218" y="65" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#2A1210">What do you love?</text>
-      <text x="218" y="78" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#6B5850">vibes, not categories</text>
+      <text x="218" y="78" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#6B5850">interests</text>
 
       <line x1="276" y1="56" x2="312" y2="56" stroke="#A9761E" stroke-width="1.5" marker-end="url(#arr)"></line>
 
       <rect x="312" y="30" width="116" height="52" rx="6" fill="#F8F1E3" stroke="rgba(42,18,16,0.16)"></rect>
       <text x="370" y="52" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#A9761E" font-weight="600">STEP 3</text>
       <text x="370" y="65" text-anchor="middle" font-family="DM Sans" font-size="11" fill="#2A1210">Rate a few places</text>
-      <text x="370" y="78" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#6B5850">seed your taste graph</text>
+      <text x="370" y="78" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#6B5850">refine your profile</text>
 
       <line x1="428" y1="56" x2="464" y2="56" stroke="#A9761E" stroke-width="1.5" marker-end="url(#arr)"></line>
 
@@ -420,7 +421,7 @@
     </svg>
   </div>
 
-  <p><b>How profile signals flow.</b> When you save a new location, that action gets attached to your profile attributes: UA student, 21, tends to save dive bars and late-night spots. Someone else who just moved to Tucson, also a UA student, gets this location surfaced in their results because people with similar profiles liked it, not because it ranked high on review volume.</p>
+  <p><b>How profile signals work:</b>&nbsp;When you save a new location, that action gets attached to your profile attributes: UA student, 21, tends to save dive bars and late-night spots. Someone else who just moved to Tucson, also a UA student, gets this location surfaced in their results because people with similar profiles liked it, not because it ranked high on review volume.</p>
 
   <div class="profile-demo">
     <div class="profile-card">
@@ -482,11 +483,11 @@
     </svg>
   </div>
 
-  <p><b>Privacy consideration.</b> All profile attributes are opt-in during onboarding and easy to edit or disable. The matching layer uses aggregated signals, not individual tracking. "12 students from UA saved this" is a segment signal, not a named list.</p>
+  <p><b>Privacy consideration.</b> All profile attributes are opt-in during onboarding and easy to edit or disable. The matching layer uses aggregated signals, not individual tracking. "12 students from UA saved this" is a signal, not a named list.</p>
 </section>
 
 <!-- 05: ARTIFACTS -->
-<section id="artifacts">
+<section id="artifacts" data-chapter="Solution">
   
   <div class="snum c5">Artifacts &amp; Work Samples</div>
   <h2>What it could <em>look like</em></h2>
@@ -553,7 +554,7 @@
 </section>
 
 <!-- 06: RESULTS & LEARNING -->
-<section id="results">
+<section id="results" data-chapter="Impact">
   
   <div class="snum c1">Results &amp; Learning</div>
   <h2>Metrics &amp; <em>impact</em></h2>
@@ -561,7 +562,7 @@
   <div style="font-family:'IBM Plex Mono'; font-size:11px; color:var(--sub); text-transform:uppercase; letter-spacing:.06em; margin-bottom:2px;">Engagement metrics</div>
   <div class="engage-grid">
     <div class="engage-cell m"><div class="en">↓ time</div><div class="el">to decision</div><div class="ed">Target: cut from ~4.8 min to ~3.5 min per discovery session</div></div>
-    <div class="engage-cell t"><div class="en">↑ saves</div><div class="el">per session</div><div class="ed">Benchmark: 10–15% lift from personalization (McKinsey)</div></div>
+    <div class="engage-cell t"><div class="en">↑ saves</div><div class="el">per session</div><div class="ed">Benchmark: ~60% lift from personalization (FT Strategies)</div></div>
     <div class="engage-cell g"><div class="en">↑ returns</div><div class="el">repeat discovery</div><div class="ed">North star: does the profile layer create a reason to come back before navigating</div></div>
     <div class="engage-cell m"><div class="en">↑ routes</div><div class="el">intent to visit rate</div><div class="ed">% of discovery searches that end in navigation, the core business signal</div></div>
   </div>
@@ -575,8 +576,8 @@
   </div>
   <div class="caveat">All metrics above are directional targets, not measured results. This is a concept project. The profile matching system in particular should be piloted carefully — the value of the network effect only emerges once enough users opt in, so early rollout should focus on contexts where that density already exists, like college campuses or dense urban neighborhoods.</div>
 
-  <p style="margin-top:22px;"><b>Business impact.</b> Social apps have won the browsing moment. But they can't route you, show you live hours, or let you save a place and walk in the door in one tap. Maps can do all of that, it just hasn't competed on the discovery layer yet. A profile system that matches you to people with similar backgrounds turns Maps from a utility into a trusted source, which is the position TikTok and Reddit currently own.</p>
-  <p style="margin-top:14px;"><b>What I'd do differently.</b> Test conversational search and moment collections separately before combining them. Launch the profile onboarding only on a segment with high save-behavior (frequent travelers, recent movers) where the taste graph seeds quickly.&nbsp;</p>
+  <p style="margin-top:22px;"><b>Business impact.</b> Social apps are winning the browsing aspect, but they can't route you, show you live hours, or let you save a place and walk in the door in one tap. Maps can do all of that, it just hasn't competed on this discovery layer yet. A profile system that matches you to people with similar backgrounds turns Maps from a utility into a trusted source, which is the position TikTok and Reddit currently own.</p>
+  <p style="margin-top:14px;"><b>What I'd do differently.</b> Test conversational search and moment collections separately before combining them. Launch the profile onboarding only on a segment with high save-behavior (frequent travelers, recent movers).</p>
 </section>
 
 

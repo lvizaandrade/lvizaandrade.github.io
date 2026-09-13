@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Italiana&display=swap');
+
+body.case-editorial {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+}
+
+body.case-editorial h1,
+body.case-editorial h2,
+body.case-editorial h3,
+body.case-editorial .h,
+body.case-editorial .h3 {
+  font-family: 'Italiana', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -.025em;
+}
+
+body.case-editorial h1 em,
+body.case-editorial h2 em,
+body.case-editorial .title span,
+body.case-editorial .zona {
+  font-family: 'Italiana', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+body.case-editorial .kicker,
+body.case-editorial .eyebrow,
+body.case-editorial .snum {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+body.case-editorial section[data-chapter] > .wrap,
+body.case-editorial-maps section[data-chapter] {
+  display: grid;
+  grid-template-columns: minmax(92px, .28fr) minmax(0, 1.72fr);
+  column-gap: clamp(28px, 6vw, 82px);
+}
+
+body.case-editorial section[data-chapter] > .wrap::before,
+body.case-editorial-maps section[data-chapter]::before {
+  content: attr(data-chapter);
+  grid-column: 1;
+  grid-row: 1 / span 30;
+  align-self: start;
+  padding-top: 9px;
+  border-top: 1px solid currentColor;
+  color: var(--editorial-accent);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+body.case-editorial section[data-chapter] > .wrap > *,
+body.case-editorial-maps section[data-chapter] > * {
+  grid-column: 2;
+}
+
+body.case-editorial section[data-chapter] .kicker,
+body.case-editorial section[data-chapter] .snum {
+  display: none;
+}
+
+body.case-editorial section[data-chapter] h2 {
+  font-size: clamp(34px, 4.2vw, 58px);
+  line-height: 1.02;
+  max-width: 17ch;
+  margin-bottom: 24px;
+}
+
+body.case-editorial section[data-chapter] p {
+  max-width: 68ch;
+}
+
+body.case-editorial .hero h1,
+body.case-editorial .hero .title {
+  font-size: clamp(58px, 9vw, 112px);
+  line-height: .9;
+}
+
+body.case-editorial .hero::after {
+  content: none;
+}
+
+body.case-editorial .hero {
+  height: 560px;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+body.case-editorial .hero > .wrap,
+body.case-editorial .hero > .hero-inner { width: 100%; }
+
+
+body.case-editorial .summary-card,
+body.case-editorial .beat,
+body.case-editorial .persona,
+body.case-editorial .feature,
+body.case-editorial .rstep,
+body.case-editorial .metric,
+body.case-editorial .engage-cell,
+body.case-editorial .profile-card {
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+body.case-editorial .artifact,
+body.case-editorial .flow,
+body.case-editorial .wireflow,
+body.case-editorial .screens,
+body.case-editorial .hero-visual {
+  position: relative;
+}
+
+body.case-editorial .artifact::after,
+body.case-editorial .flow::after,
+body.case-editorial .wireflow::after {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  right: -8px;
+  top: -8px;
+  width: 34px;
+  height: 24px;
+  border-top: 1px solid var(--editorial-accent);
+  border-right: 1px solid var(--editorial-accent);
+  transform: rotate(5deg);
+  pointer-events: none;
+}
+
+body.case-editorial-chegg {
+  --editorial-accent: #EB7100;
+  background: #FAF8F3;
+}
+
+body.case-editorial-subzona {
+  --editorial-accent: #AE4230;
+  background: #F1E7DC;
+}
+
+body.case-editorial-maps {
+  --editorial-accent: #A9761E;
+  background: #F1E7D6;
+}
+
+body.case-editorial-chegg .title span { color: var(--orange); }
+body.case-editorial-subzona .zona { color: #C9AA9C; }
+body.case-editorial-maps h1 em,
+body.case-editorial-maps h2 em { color: #E7B45A; }
+
+@media (max-width: 720px) {
+  body.case-editorial section[data-chapter] > .wrap,
+  body.case-editorial-maps section[data-chapter] {
+    grid-template-columns: 1fr;
+  }
+  body.case-editorial section[data-chapter] > .wrap::before,
+  body.case-editorial-maps section[data-chapter]::before {
+    grid-column: 1;
+    grid-row: auto;
+    margin-bottom: 20px;
+  }
+  body.case-editorial section[data-chapter] > .wrap > *,
+  body.case-editorial-maps section[data-chapter] > * { grid-column: 1; }
+  body.case-editorial .hero::after { display: none; }
+  body.case-editorial .hero { height: auto; min-height: 520px; }
+}
