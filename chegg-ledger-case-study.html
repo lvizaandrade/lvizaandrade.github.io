@@ -30,9 +30,28 @@
   .wrap{max-width:var(--max); margin:0 auto; padding:0 26px;}
 
   header.hero{
-    padding:72px 0 48px;
+    min-height:560px;
+    padding:96px 0 64px;
     border-bottom:3px solid var(--orange);
+    color:#fff;
+    display:flex;
+    align-items:flex-end;
+    background:#1C1C1E;
   }
+  header.hero .wrap{width:100%; display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:end;}
+  .hero-copy{min-width:0;}
+  header.hero h1.title{color:#fff; font-size:clamp(52px,8vw,92px);}
+  header.hero .subhead{color:#E5DDD3;}
+  header.hero .eyebrow, header.hero .meta-item .label{color:#F29A4A;}
+  header.hero .meta-item .value{color:#fff;}
+  .hero-product{background:#FAF8F3; color:var(--ink); border-top:5px solid var(--orange); padding:22px; box-shadow:0 24px 60px rgba(0,0,0,.3);}
+  .hero-product-label{font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--orange-deep);}
+  .hero-product h3{font-size:18px; margin:8px 0 4px;}
+  .hero-product p{font-size:13px; color:var(--gray); margin-bottom:18px;}
+  .hero-signal{display:grid; grid-template-columns:1fr auto; gap:12px; padding:12px 0; border-top:1px solid var(--line); align-items:center;}
+  .hero-signal strong{display:block; font-size:13px;}
+  .hero-signal small{display:block; color:var(--gray); font-size:11px;}
+  .hero-change{font-family:'IBM Plex Mono',monospace; color:var(--orange-deep); font-size:12px; font-weight:600;}
   .eyebrow{
     font-family:'IBM Plex Mono', monospace;
     font-size:12px;
@@ -68,6 +87,9 @@
 
   section.block{padding:52px 0;}
   section.block + section.block{border-top:1px solid var(--line);}
+  section.block[data-chapter] > .wrap{display:grid; grid-template-columns:120px minmax(0,1fr); column-gap:42px;}
+  .chapter-label{grid-column:1 !important; grid-row:1 / span 40; border-top:2px solid var(--orange); padding-top:10px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--orange-deep); align-self:start;}
+  section.block[data-chapter] > .wrap > *:not(.chapter-label){grid-column:2;}
   .kicker{
     font-family:'IBM Plex Mono', monospace;
     font-size:12px;
@@ -170,7 +192,7 @@
   }
   .ledger-row{
     display:grid;
-    grid-template-columns:1fr auto auto;
+    grid-template-columns:minmax(180px,1fr) minmax(150px,.8fr) auto;
     gap:14px;
     align-items:center;
     padding:11px 0;
@@ -194,6 +216,48 @@
   }
   .pill.high{color:var(--orange-deep); border-color:rgba(235,113,0,0.4);}
   .pill.mid{color:var(--gray);}
+
+  .ledger-app{border:1px solid var(--line); background:#fff; margin:24px 0 14px; box-shadow:0 18px 45px rgba(28,28,30,.08);}
+  .app-top{display:flex; justify-content:space-between; align-items:center; gap:16px; padding:14px 18px; background:var(--ink); color:#fff;}
+  .app-brand{font-family:'Sora',sans-serif; font-weight:700; font-size:14px;}
+  .app-course{font-family:'IBM Plex Mono',monospace; font-size:10px; color:#C9C5BE;}
+  .app-tabs{display:flex; gap:0; border-bottom:1px solid var(--line); overflow:auto;}
+  .app-tab{padding:11px 16px; font-family:'IBM Plex Mono',monospace; font-size:10px; white-space:nowrap; color:var(--gray);}
+  .app-tab.active{color:var(--orange-deep); border-bottom:2px solid var(--orange);}
+  .app-content{padding:20px;}
+  .app-heading{display:flex; justify-content:space-between; gap:16px; align-items:end; margin-bottom:18px;}
+  .app-heading h3{margin:0; font-size:18px;}
+  .app-heading span{font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--gray);}
+  .app-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:16px;}
+  .app-panel{border:1px solid var(--line); padding:16px;}
+  .app-panel-label{font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:.06em; color:var(--orange-deep); margin-bottom:10px;}
+  .app-alert{display:flex; justify-content:space-between; gap:12px; padding:11px 0; border-top:1px solid var(--line);}
+  .app-alert strong{font-size:13px; display:block;}
+  .app-alert small{font-size:11px; color:var(--gray); display:block;}
+  .app-alert b{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--orange-deep); white-space:nowrap;}
+  .teacher-stat{padding:11px 0; border-top:1px solid var(--line); font-size:13px;}
+  .teacher-stat strong{color:var(--orange-deep);}
+  .app-note{margin-top:14px; padding:12px 14px; background:#FFF3E8; font-size:12px; color:#583018;}
+  @media(max-width:700px){.app-grid{grid-template-columns:1fr}.app-heading{align-items:start; flex-direction:column}}
+
+  .trend{
+    display:flex;
+    align-items:flex-end;
+    gap:3px;
+    height:28px;
+  }
+  .trend span{width:9px; background:rgba(235,113,0,.25); border-top:2px solid var(--orange);}
+  .trend-label{font-family:'IBM Plex Mono', monospace; font-size:10px; color:var(--gray); margin-top:5px;}
+
+  .risk-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:24px;}
+  .risk-card{border:1px solid var(--line); padding:24px; background:#fff;}
+  .risk-card .risk-label{font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--orange-deep);}
+  .risk-card h3{margin:8px 0 12px;}
+  .risk-card p:last-child{margin-bottom:0;}
+  .trust-list{display:grid; grid-template-columns:repeat(2,1fr); gap:10px 24px; margin:20px 0 0; padding:0; list-style:none;}
+  .trust-list li{border-top:1px solid var(--line); padding:12px 0; font-size:14px;}
+  .trust-list li::before{content:'— '; color:var(--orange-deep);}
+  @media(max-width:700px){.risk-grid,.trust-list{grid-template-columns:1fr}.ledger-row{grid-template-columns:1fr}.trend{margin-top:4px}}
 
   .metrics-grid{
     display:grid;
@@ -261,6 +325,8 @@
   }
   [data-editable]:hover{outline-color:rgba(235,113,0,0.45);}
   [data-editable]:focus{outline:1px solid var(--orange); outline-offset:3px; background:rgba(235,113,0,0.05);}
+  [contenteditable="true"]:hover{outline:1px dashed rgba(235,113,0,.35); outline-offset:3px;}
+  [contenteditable="true"]:focus{outline:1px solid var(--orange); outline-offset:3px; background:rgba(235,113,0,.06);}
 
   #edit-toolbar{
     position:fixed;
@@ -292,6 +358,7 @@
   }
   #edit-toolbar button:hover{background:var(--orange-deep);}
   @media print{ #edit-toolbar{display:none;} }
+  @media(max-width:760px){header.hero{min-height:520px; padding-top:72px;} header.hero .wrap{grid-template-columns:1fr;} .hero-product{margin-top:10px;} section.block[data-chapter] > .wrap{grid-template-columns:1fr;} .chapter-label,section.block[data-chapter] > .wrap > *{grid-column:1 !important;} .chapter-label{grid-row:auto; margin-bottom:18px;}}
 </style>
 <link href="motion.css" rel="stylesheet">
 <link href="case-editorial.css" rel="stylesheet">
@@ -300,105 +367,157 @@
 
 <header class="hero">
   <div class="wrap">
+    <div class="hero-copy">
     <div class="eyebrow">Product Strategy Case Study</div>
     <h1 class="title">Chegg <span data-editable-child="">Ledger</span></h1>
-    <p class="subhead"><span>AI knows whats public. Chegg nows what actually happened. A pitch for turning fifteen years of student data into something professors can't get anywhere else.</span></p>
+    <p class="subhead"><span>Turning years of student help-seeking patterns into useful course signals.</span></p>
     <div class="meta-row">
       <div class="meta-item"><span class="label">Company</span><span class="value">Chegg, Inc.</span></div>
       <div class="meta-item"><span class="label">Role</span><span class="value">Product Strategy</span></div>
-      <div class="meta-item"><span class="label">Buyer</span><span class="value">Professors and departments</span></div>
+      <div class="meta-item"><span class="label">Buyer</span><span class="value">Academic departments and publishers</span></div>
+    </div>
+    </div>
+    <div class="hero-product" aria-label="Chegg Ledger product preview">
+      <span class="hero-product-label">Chegg Ledger · Biology 181</span>
+      <h3>What changed this semester?</h3>
+      <p>Help-seeking trends from the same textbook edition</p>
+      <div class="hero-signal"><span><strong>Enzyme inhibition</strong><small>Rising for four years</small></span><span class="hero-change">↑ 61%</span></div>
+      <div class="hero-signal"><span><strong>Membrane transport</strong><small>Above its usual range</small></span><span class="hero-change">↑ 34%</span></div>
+      <div class="hero-signal"><span><strong>Cell-cycle checkpoints</strong><small>Early change to review</small></span><span class="hero-change">↑ 27%</span></div>
     </div>
   </div>
 </header>
 
 <section class="block" id="summary" data-chapter="Overview">
   <div class="wrap">
+    <div class="chapter-label">Overview</div>
     <div class="kicker">Executive Summary</div>
     <h2 class="h">Stop competing where AI already won</h2>
     <div class="summary-card">
       <p>Chegg's core business is answers. Free AI tools give students answers faster and better now. That fight is already lost, and no version of smarter homework help wins it back.</p>
-      <p>Chegg Ledger sells something else. It's a fifteen year record of where real students, at real schools, get stuck on a given course or textbook. That record is proprietary, it predates generative AI, and it can't be scraped or reconstructed. The buyer is the professor, not the student. Someone who wants to know a course's rough spots before teaching it.</p>
+      <p>Chegg cannot beat free AI at answers. It may still own something useful: years of data showing where students repeatedly asked for help.</p>
+      <p>Ledger turns those patterns into early course signals for instructors, departments, and publishers. Pilot schools then test whether those signals match real student performance.</p>
     </div>
   </div>
 </section>
 
 <section class="block" id="problem" data-chapter="Problem">
   <div class="wrap">
+    <div class="chapter-label">Problem</div>
     <div class="kicker">Problem</div>
     <h2 class="h">This isn't a product problem</h2>
-    <p>Chegg's subscriber losses track closely with ChatGPT's rise. Step by step answers used to be worth paying for, now they're free and instant, from a dozen different tools.&nbsp;</p>
-    <p>Any strategy that keeps Chegg in the business of giving answers, even AI powered ones, is fighting on extensive ground in a growing industry. The only path left is finding what Chegg has that AI doesn't.</p>
+    <p>Step-by-step answers used to be worth paying for. Now they are free and instant.</p>
+    <p>Instead of building another answer tool, Chegg could test whether its archive of student work can become trusted course analytics.</p>
   </div>
 </section>
 
 <section class="block" id="approach" data-chapter="Process">
   <div class="wrap">
+    <div class="chapter-label">Process</div>
     <div class="kicker">Approach</div>
-    <h2 class="h">What made the cut?</h2>
-    <p>Three earlier versions of this pitch got cut once they were tested against a hard question.</p>
+    <h2 class="h">What was<span style="font-size: clamp(34px, 4.2vw, 58px); letter-spacing: -0.025em;">&nbsp;cut?</span></h2>
+    <p>Three ideas were cut because they did not create a real advantage.</p>
     <div class="beat">
-      <div class="beat-head"><span class="beat-label">Cut</span><h3 class="h3">AI flags AI solvable assignments</h3></div>
-      <p>Had Chegg's AI scan a syllabus and flag which questions students could just ask ChatGPT. A professor can ask ChatGPT the same question directly. AI wrapped around Chegg's data isn't a moat, it's a feature anyone rebuilds in a weekend.</p>
+      <div class="beat-head"><span class="beat-label">Cut</span><h3 class="h3">A better AI homework helper</h3></div>
+      <p>Free tools already do this well. Chegg would still be competing on answers.</p>
     </div>
     <div class="beat">
       <div class="beat-head"><span class="beat-label">Cut</span><h3 class="h3">A student facing companion tool</h3></div>
-      <p>An app showing students their own weak spots, sold alongside the professor product. Dropped so the pitch has one buyer instead of two, and one reason to pay.</p>
+      <p>Dropped to keep one buyer and one clear reason to pay.</p>
     </div>
     <div class="beat">
-      <div class="beat-head"><span class="beat-label">Cut</span><h3 class="h3">"Students are training this"</h3></div>
-      <p>Early language implied ongoing participation. That's not accurate. No student opts into anything. The record is a byproduct of them solving their own problem, already logged, going back fifteen years.</p>
+      <div class="beat-head"><span class="beat-label">Cut</span><h3 class="h3">A list of the most searched questions</h3></div>
+      <p>Search volume can reflect popularity, not difficulty. A simple ranking would be easy to misread.</p>
     </div>
   </div>
 </section>
 
 <section class="block" id="why" data-chapter="Pressure test">
   <div class="wrap">
+    <div class="chapter-label">Pressure test</div>
     <div class="kicker">Why This Holds Up</div>
     <h2 class="h">Two questions worth asking first</h2>
-    <p><strong>Isn't this what Canvas or Quizlet already do?</strong> No. Those tools only see one professor's own class, after the fact, on questions that professor chose to test. A new professor or a first time course starts with nothing. Chegg already has the pattern: how students taking this exact textbook chapter at hundreds of other schools, over many years, have struggled, including the parts nobody put on a quiz.&nbsp;</p>
-    <p><strong>Doesn't AI already train on years of internet history too?</strong> A different kind of history. A model learns from public writing about a topic: forum posts, old homework help sites, textbook excerpts. It can tell you a topic confuses people in general. It has no access to Chegg's actual usage logs: which student searched which exact question, in which exact course, and how often. That data was never posted publicly. It lives inside Chegg's own systems. No model has seen it and none can rebuild it from what's on the open web.</p>
+    <p><strong>Isn't this what an LMS does?</strong> An LMS measures one school's results after class starts. Ledger looks for older patterns before the semester, then asks the school's data to confirm them.</p>
+    <p><strong>Doesn't AI already know this?</strong> AI sees public content. Chegg has private usage patterns showing which textbook concepts drew help over time.</p>
     <table class="compare">
       <tbody><tr><th>Capability</th><th>Canvas / Quizlet</th><th>Chegg Ledger</th></tr>
-      <tr><td class="row-label">Data source</td><td>One professor, one term</td><td class="win">Cross institutional, 15+ years</td></tr>
+      <tr><td class="row-label">Data source</td><td>One institution, current terms</td><td class="win">Historical textbook and concept activity</td></tr>
       <tr><td class="row-label">Timing</td><td>After the assignment</td><td class="win">Before the semester starts</td></tr>
-      <tr><td class="row-label">New course, no history</td><td>Nothing to show</td><td class="win">Full pattern already there</td></tr>
+      <tr><td class="row-label">Best use</td><td>Measure class performance</td><td class="win">Show where help-seeking patterns are changing</td></tr>
     </tbody></table>
   </div>
 </section>
 
 <section class="block" id="artifact" data-chapter="Solution">
   <div class="wrap">
-    <div class="kicker">What a Professor Sees</div>
+    <div class="chapter-label">Solution</div>
+    <div class="kicker">What an Instructor Sees</div>
     <h2 class="h">The ledger</h2>
-    <div class="artifact">
-      <div class="artifact-bar"><span class="hi">CHEGG LEDGER / BIO 181</span><span>Cell Structure and Function</span></div>
-      <div class="artifact-body">
-        <div class="artifact-title">Where students have gotten stuck, historically</div>
-        <div class="artifact-sub">This textbook edition, 15 year range</div>
-        <div class="ledger-row"><span class="topic">Osmosis vs. diffusion (Ch. 5.2)</span><span class="years">Steady, 15 yrs</span><span class="pill high">High</span></div>
-        <div class="ledger-row"><span class="topic">Enzyme inhibition types (Ch. 6.4)</span><span class="years">Rising, last 4 yrs</span><span class="pill mid">Emerging</span></div>
-        <div class="ledger-row"><span class="topic">Mitosis vs. meiosis order</span><span class="years">Steady, 15 yrs</span><span class="pill high">High</span></div>
+    <div class="ledger-app">
+      <div class="app-top"><span class="app-brand">Chegg Ledger</span><span class="app-course">BIO 181 · Campbell Biology, 12th ed.</span></div>
+      <div class="app-tabs"><span class="app-tab active">Course overview</span><span class="app-tab">Concept trends</span><span class="app-tab">How others teach it</span><span class="app-tab">Pilot results</span></div>
+      <div class="app-content">
+        <div class="app-heading"><h3>Plan your next unit</h3><span>Updated from 8 years of course activity</span></div>
+        <div class="app-grid">
+          <div class="app-panel">
+            <div class="app-panel-label">Concepts to review</div>
+            <div class="app-alert"><span><strong>Enzyme inhibition</strong><small>Help-seeking has risen for four years</small></span><b>↑ 61%</b></div>
+            <div class="app-alert"><span><strong>Membrane transport</strong><small>Above its usual range this edition</small></span><b>↑ 34%</b></div>
+            <div class="app-alert"><span><strong>Cell-cycle checkpoints</strong><small>Early change worth watching</small></span><b>↑ 27%</b></div>
+          </div>
+          <div class="app-panel">
+            <div class="app-panel-label">How other instructors teach this unit</div>
+            <div class="teacher-stat"><strong>68%</strong> add a review activity before the exam</div>
+            <div class="teacher-stat"><strong>42%</strong> spend an extra class on enzyme inhibition</div>
+            <div class="teacher-stat"><strong>Most used:</strong> diagram practice and short case problems</div>
+            <div class="app-note">Suggested next step: compare these patterns with your last two exam results.</div>
+          </div>
+        </div>
       </div>
     </div>
-    <p>No row here is AI generated. It's a count of how often, and for how long, students needed outside help on that exact concept in that exact course. A professor can rebuild a lecture around it, or just know what's coming before creating the next exam.</p>
+    <p>Ledger shows what is changing, how other instructors respond, and what the school should check in its own results.</p>
+  </div>
+</section>
+
+<section class="block" id="trust" data-chapter="Trust">
+  <div class="wrap">
+    <div class="chapter-label">Trust</div>
+    <div class="kicker">Trust</div>
+    <h2 class="h">Start small and prove it works</h2>
+    <p>Chegg has years of data. The first step is a small pilot with a few high-enrollment courses. Schools can compare Ledger's signals with their own exam results before using it more widely.</p>
+    <p>Only broad course patterns should be shown—never individual students, instructors, or assignments.</p>
+  </div>
+</section>
+
+<section class="block" id="risks" data-chapter="Risks">
+  <div class="wrap">
+    <div class="chapter-label">Risks</div>
+    <div class="kicker">Risks</div>
+    <h2 class="h">Where the idea could fall short</h2>
+    <p>Two limits shape where Ledger should start.</p>
+    <div class="risk-grid">
+      <div class="risk-card"><span class="risk-label">Risk 01</span><h3 class="h3">The record gets old</h3><p>Courses change while Chegg's archive grows more slowly.</p><p><strong>Response:</strong> Start with intro STEM and business courses that change slowly. Label every signal by textbook edition and time range.</p></div>
+      <div class="risk-card"><span class="risk-label">Risk 02</span><h3 class="h3">Volume is not difficulty</h3><p>A popular problem may get more searches simply because more schools assign it.</p><p><strong>Response:</strong> Show change over time within the same book and course. Then compare it with professor ratings and test results.</p></div>
+    </div>
   </div>
 </section>
 
 <section class="block" id="results" data-chapter="Impact">
   <div class="wrap">
+    <div class="chapter-label">Impact</div>
     <div class="kicker">Results and Learning</div>
-    <h2 class="h">Projected impact</h2>
-    <p>Chegg Ledger hasn't shipped. These are projections based on the reasoning above, not measured results.</p>
+    <h2 class="h">What the pilot must prove</h2>
+    <p>This is a test, not a finished turnaround plan.</p>
     <div class="metrics-grid">
-      <div class="metric"><div class="num">3,400+</div><div class="lbl">institutions with usable history at launch</div></div>
-      <div class="metric"><div class="num">$0</div><div class="lbl">added cost to generate the core dataset</div></div>
-      <div class="metric"><div class="num">15 yrs</div><div class="lbl">head start no competitor can backfill</div></div>
+      <div class="metric"><div class="num">Signal</div><div class="lbl">Do rising patterns correlate with lower assessment performance?</div></div>
+      <div class="metric"><div class="num">Action</div><div class="lbl">Do instructors change course design after seeing the trend?</div></div>
+      <div class="metric"><div class="num">Trust</div><div class="lbl">Will departments use the product under strict privacy controls?</div></div>
     </div>
-    <p class="projection-note">Figures are illustrative, for this case study only.</p>
+    <p class="projection-note">Pilot wedge: high-enrollment, standardized introductory courses such as accounting, chemistry, biology, and calculus.</p>
     <ul class="learnings">
-      <li><span class="tag">On moats</span><p>Adding AI to a pitch feels like the safe move. The data underneath is usually the actual moat, and AI wrapped around it just invites comparison to whatever AI tool the buyer already has.</p></li>
-      <li><span class="tag">On scope</span><p>Removing the student facing half kept the pitch focused on one buyer and one reason to pay.</p></li>
-      <li><span class="tag">On wording</span><p>"Historical usage record" and "students are training this" describe the same data. Only one is accurate, and only one holds up under a hard question.</p></li>
+      <li><span class="tag">On advantage</span><p>The data matters more than adding another AI feature.</p></li>
+      <li><span class="tag">On scope</span><p>One buyer makes the product easier to explain and test.</p></li>
+      <li><span class="tag">On evidence</span><p>Help-seeking is a clue, not proof. School data must validate it.</p></li>
     </ul>
   </div>
 </section>
@@ -409,11 +528,30 @@
   </div>
 </footer>
 
+<div id="edit-toolbar"><span class="status">Click any text to edit</span><button id="reset-edits" type="button">Reset edits</button></div>
 
 
 
 
 
 
+
+<script>
+  const editRoot = document.getElementById('artifacts-component-root-html');
+  const editSelector = 'h1,h2,h3,p,li,td,th,.eyebrow,.kicker,.chapter-label,.meta-item .value,.artifact-title,.artifact-sub,.topic,.trend-label,.pill,.risk-label,.metric .num,.metric .lbl,.hero-product-label,.hero-signal strong,.hero-signal small,.hero-change,.app-brand,.app-course,.app-tab,.app-heading span,.app-panel-label,.app-alert strong,.app-alert small,.app-alert b,.teacher-stat,.app-note';
+  const editableItems = [...editRoot.querySelectorAll(editSelector)].filter(el => !el.closest('#edit-toolbar'));
+  editableItems.forEach((el, index) => {
+    const key = `chegg-ledger-edit-v2-${index}`;
+    const saved = localStorage.getItem(key);
+    if (saved !== null) el.innerHTML = saved;
+    el.contentEditable = 'true';
+    el.spellcheck = true;
+    el.addEventListener('input', () => localStorage.setItem(key, el.innerHTML));
+  });
+  document.getElementById('reset-edits').addEventListener('click', () => {
+    editableItems.forEach((_, index) => localStorage.removeItem(`chegg-ledger-edit-v2-${index}`));
+    location.reload();
+  });
+</script>
 <script src="motion.js"></script>
 </body></html>
