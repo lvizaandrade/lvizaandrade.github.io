@@ -5,9 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chegg Ledger — Product Case Study</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&amp;family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+
+
 <style>
   :root{
     --orange:#EB7100;
@@ -321,12 +321,306 @@
 
   @media(max-width:760px){header.hero{min-height:520px; padding-top:72px;} header.hero .wrap{grid-template-columns:1fr;} .hero-product{margin-top:10px;} section.block[data-chapter] > .wrap{grid-template-columns:1fr;} .chapter-label,section.block[data-chapter] > .wrap > *{grid-column:1 !important;} .chapter-label{grid-row:auto; margin-bottom:18px;}}
 </style>
-<link href="motion.css" rel="stylesheet">
-<link href="case-editorial.css" rel="stylesheet">
+<style>:root{--motion-accent:#b43e51}
+.motion-progress{position:fixed;z-index:10000;top:0;left:0;width:100%;height:3px;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,var(--motion-accent),#e79b75);pointer-events:none}
+.motion-ready .motion-reveal{opacity:0;transform:translateY(28px) scale(.985);transition:opacity .72s cubic-bezier(.2,.75,.25,1),transform .72s cubic-bezier(.2,.75,.25,1);transition-delay:var(--motion-delay,0ms)}
+.motion-ready .motion-reveal.motion-in{opacity:1;transform:none}
+.motion-ready .motion-pop{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease,border-color .35s ease;transform-style:preserve-3d;will-change:transform}
+.motion-ready .motion-pop:hover{transform:translateY(-7px) rotateX(var(--motion-rx,0deg)) rotateY(var(--motion-ry,0deg));box-shadow:0 20px 45px rgba(31,22,23,.13)}
+.motion-ready a,.motion-ready button{transition:transform .22s ease,color .22s ease,background-color .22s ease,border-color .22s ease}
+.motion-ready a:hover,.motion-ready button:hover{transform:translateY(-2px)}
+.motion-ready img{transition:transform .65s cubic-bezier(.2,.8,.2,1),filter .4s ease}
+.motion-ready .motion-pop:hover img,.motion-ready figure:hover img,.motion-ready .phone:hover img{transform:scale(1.025)}
+@media(max-width:800px),(pointer:coarse){.motion-ready .motion-pop:hover{transform:translateY(-4px)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.motion-progress{display:none}.motion-ready .motion-reveal{opacity:1;transform:none;transition:none}.motion-ready *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+<style>
+
+body.case-editorial {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+}
+
+body.case-editorial h1,
+body.case-editorial h2,
+body.case-editorial h3,
+body.case-editorial .h,
+body.case-editorial .h3 {
+  font-family: 'Italiana', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -.025em;
+}
+
+body.case-editorial h1 em,
+body.case-editorial h2 em,
+body.case-editorial .title span,
+body.case-editorial .zona {
+  font-family: 'Italiana', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+body.case-editorial .kicker,
+body.case-editorial .eyebrow,
+body.case-editorial .snum {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+body.case-editorial section[data-chapter] > .wrap,
+body.case-editorial-maps section[data-chapter] {
+  display: grid;
+  grid-template-columns: minmax(92px, .28fr) minmax(0, 1.72fr);
+  column-gap: clamp(28px, 6vw, 82px);
+}
+
+body.case-editorial section[data-chapter] > .wrap::before,
+body.case-editorial-maps section[data-chapter]::before {
+  content: attr(data-chapter);
+  grid-column: 1;
+  grid-row: 1 / span 30;
+  align-self: start;
+  padding-top: 9px;
+  border-top: 1px solid currentColor;
+  color: var(--editorial-accent);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+body.case-editorial section[data-chapter] > .wrap > *,
+body.case-editorial-maps section[data-chapter] > * {
+  grid-column: 2;
+}
+
+body.case-editorial section[data-chapter] .kicker,
+body.case-editorial section[data-chapter] .snum {
+  display: none;
+}
+
+body.case-editorial section[data-chapter] h2 {
+  font-size: clamp(34px, 4.2vw, 58px);
+  line-height: 1.02;
+  max-width: 17ch;
+  margin-bottom: 24px;
+}
+
+body.case-editorial section[data-chapter] p {
+  max-width: 68ch;
+}
+
+body.case-editorial .hero h1,
+body.case-editorial .hero .title {
+  font-size: clamp(58px, 9vw, 112px);
+  line-height: .9;
+}
+
+body.case-editorial .hero::after {
+  content: none;
+}
+
+body.case-editorial .hero {
+  height: 560px;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+body.case-editorial .hero > .wrap,
+body.case-editorial .hero > .hero-inner { width: 100%; }
+
+
+body.case-editorial .summary-card,
+body.case-editorial .beat,
+body.case-editorial .persona,
+body.case-editorial .feature,
+body.case-editorial .rstep,
+body.case-editorial .metric,
+body.case-editorial .engage-cell,
+body.case-editorial .profile-card {
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+body.case-editorial .artifact,
+body.case-editorial .flow,
+body.case-editorial .wireflow,
+body.case-editorial .screens,
+body.case-editorial .hero-visual {
+  position: relative;
+}
+
+body.case-editorial .artifact::after,
+body.case-editorial .flow::after,
+body.case-editorial .wireflow::after {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  right: -8px;
+  top: -8px;
+  width: 34px;
+  height: 24px;
+  border-top: 1px solid var(--editorial-accent);
+  border-right: 1px solid var(--editorial-accent);
+  transform: rotate(5deg);
+  pointer-events: none;
+}
+
+body.case-editorial-chegg {
+  --editorial-accent: #EB7100;
+  background: #FAF8F3;
+}
+
+body.case-editorial-subzona {
+  --editorial-accent: #AE4230;
+  background: #F1E7DC;
+}
+
+body.case-editorial-maps {
+  --editorial-accent: #A9761E;
+  background: #F1E7D6;
+}
+
+body.case-editorial-chegg .title span { color: var(--orange); }
+body.case-editorial-subzona .zona { color: #C9AA9C; }
+body.case-editorial-maps h1 em,
+body.case-editorial-maps h2 em { color: #E7B45A; }
+
+@media (max-width: 720px) {
+  body.case-editorial section[data-chapter] > .wrap,
+  body.case-editorial-maps section[data-chapter] {
+    grid-template-columns: 1fr;
+  }
+  body.case-editorial section[data-chapter] > .wrap::before,
+  body.case-editorial-maps section[data-chapter]::before {
+    grid-column: 1;
+    grid-row: auto;
+    margin-bottom: 20px;
+  }
+  body.case-editorial section[data-chapter] > .wrap > *,
+  body.case-editorial-maps section[data-chapter] > * { grid-column: 1; }
+  body.case-editorial .hero::after { display: none; }
+  body.case-editorial .hero { height: auto; min-height: 520px; }
+}
+</style>
 <style>body.case-editorial .motion-reveal{opacity:1!important;transform:none!important;transition:none!important}body.case-editorial .motion-pop{will-change:auto}</style>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&amp;family=Italiana&amp;display=swap" media="print" onload="this.media='all'">
-</head>
+
+<style>@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/font-73ee977f3973.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/font-334e1ee15178.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/font-6c0f1940c1c2.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/font-9ebe625281f6.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/font-a9951f6da9b8.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/font-5d97e0a1fb59.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/font-009f5dfdc7fe.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(assets/font-c9a8ccd3d429.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/font-bf6a9bb441c2.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/font-f842bfddb9ca.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/font-6570ba1947ff.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/font-e25df9b0eec8.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/font-2ae9d0b85736.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/font-28a332909d69.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Italiana';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/font-bfce9fdc50e3.woff2) format('woff2');
+}
+</style>
+<style>.reveal,.motion-ready .motion-reveal{opacity:1!important;transform:none!important;transition:none!important}.motion-pop{will-change:auto!important}</style></head>
 <body id="artifacts-component-root-html" class="case-editorial case-editorial-chegg">
+<div id="page-content">
 
 <header class="hero">
   <div class="wrap">
@@ -340,7 +634,7 @@
       <div class="meta-item"><span class="label">Buyer</span><span class="value">Academic departments and publishers</span></div>
     </div>
     </div>
-    <figure class="hero-shot"><img decoding="async" fetchpriority="high" src="chegg-ledger-overview.png" alt="Chegg Ledger educator landing page with concept trends, teaching practices, and pilot results"></figure>
+    <figure class="hero-shot"><img decoding="async" fetchpriority="high" src="assets/chegg-overview.webp" alt="Chegg Ledger educator landing page with concept trends, teaching practices, and pilot results"></figure>
   </div>
 </header>
 
@@ -349,7 +643,7 @@
     <div class="chapter-label">Overview</div>
     <div class="kicker">Executive Summary</div>
     <h2 class="h">Stop competing where AI already won</h2>
-    <div class="summary-card">
+    <div class="summary-card motion-reveal motion-pop" style="--motion-delay: 0ms;">
       <p>Chegg's core business is answers. Free AI tools give students answers faster and better now. That fight is already lost, and no version of smarter homework help wins it back.</p>
       <p>Chegg cannot beat free AI at answers. It may still own something useful: years of data showing where students repeatedly asked for help.</p>
       <p>Ledger turns those patterns into early course signals for instructors, departments, and publishers. Pilot schools then test whether those signals match real student performance.</p>
@@ -373,15 +667,15 @@
     <div class="kicker">Approach</div>
     <h2 class="h">What was<span style="font-size: clamp(34px, 4.2vw, 58px); letter-spacing: -0.025em;">&nbsp;cut?</span></h2>
     <p>Three ideas were cut because they did not create a real advantage.</p>
-    <div class="beat">
+    <div class="beat motion-reveal motion-pop" style="--motion-delay: 55ms;">
       <div class="beat-head"><span class="beat-label">Cut</span><h3 class="h3">A better AI homework helper</h3></div>
       <p>Free tools already do this well. Chegg would still be competing on answers.</p>
     </div>
-    <div class="beat">
+    <div class="beat motion-reveal motion-pop" style="--motion-delay: 110ms;">
       <div class="beat-head"><span class="beat-label">Cut</span><h3 class="h3">A student facing companion tool</h3></div>
       <p>Dropped to keep one buyer and one clear reason to pay.</p>
     </div>
-    <div class="beat">
+    <div class="beat motion-reveal motion-pop" style="--motion-delay: 165ms;">
       <div class="beat-head"><span class="beat-label">Cut</span><h3 class="h3">A list of the most searched questions</h3></div>
       <p>Search volume can reflect popularity, not difficulty. A simple ranking would be easy to misread.</p>
     </div>
@@ -411,7 +705,7 @@
     <div class="kicker">What an Instructor Sees</div>
     <h2 class="h">The ledger</h2>
     <p><strong>Ask Ledger</strong> lets an instructor ask simple questions like “How does this compare to last fall?” It searches and explains the existing archive. It does not create new data or make the underlying signal stronger.</p>
-    <figure class="ledger-shot"><img decoding="async" loading="lazy" src="chegg-ledger-dashboard.png" alt="Chegg Ledger dashboard with Ask Ledger, concept alerts, trends, and instructor comparisons"></figure>
+    <figure class="ledger-shot"><img decoding="async" loading="lazy" src="assets/chegg-dashboard.webp" alt="Chegg Ledger dashboard with Ask Ledger, concept alerts, trends, and instructor comparisons"></figure>
     <p>Ledger does not treat a popular search as proof that students struggled. A concept is flagged only when repeat views and Ask an Expert follow-ups rise faster than enrollment-adjusted search volume. That helps separate “everyone was assigned this” from “students kept coming back because they were stuck.”</p>
   </div>
 </section>
@@ -431,10 +725,12 @@
     <div class="chapter-label">Risks</div>
     <div class="kicker">Risks</div>
     <h2 class="h">Where the idea could fall short</h2>
-    <p>Two limits shape where Ledger should start.</p>
+    <p>Three limits shape where Ledger should start.</p>
     <div class="risk-grid">
       <div class="risk-card"><span class="risk-label">Risk 01</span><h3 class="h3">The record gets old</h3><p>Courses change while Chegg's archive grows more slowly.</p><p><strong>Response:</strong> Start with intro STEM and business courses that change slowly. Label every signal by textbook edition and time range.</p></div>
       <div class="risk-card"><span class="risk-label">Risk 02</span><h3 class="h3">Volume is not difficulty</h3><p>A popular problem may get more searches simply because more schools assign it.</p><p><strong>Response:</strong> Do not use searches alone. Flag a concept only when repeat views and Ask an Expert follow-ups grow faster than enrollment-adjusted search volume.</p></div>
+
+      <div class="risk-card"><span class="risk-label">Risk 03</span><h3>Course content becomes outdated</h3><p>New materials and assignments may no longer match the concepts in older textbooks.</p><p><strong>Response:</strong> Let teachers upload current course materials alongside anonymized assignment or quiz results. Ledger could connect missed questions to course concepts and show where students are struggling now.</p></div>
     </div>
   </div>
 </section>
@@ -446,9 +742,9 @@
     <h2 class="h">What a small pilot should answer</h2>
     <p>Start with a few introductory courses and answer three simple questions.</p>
     <div class="metrics-grid">
-      <div class="metric"><div class="num">1</div><div class="lbl">Do Ledger's warnings match the concepts students miss on exams?</div></div>
-      <div class="metric"><div class="num">2</div><div class="lbl">Do instructors change a lesson, review, or assignment because of the insight?</div></div>
-      <div class="metric"><div class="num">3</div><div class="lbl">Does the department find it useful enough to continue next semester?</div></div>
+      <div class="metric motion-reveal motion-pop" style="--motion-delay: 220ms;"><div class="num">1</div><div class="lbl">Do Ledger's warnings match the concepts students miss on exams?</div></div>
+      <div class="metric motion-reveal motion-pop" style="--motion-delay: 0ms;"><div class="num">2</div><div class="lbl">Do instructors change a lesson, review, or assignment because of the insight?</div></div>
+      <div class="metric motion-reveal motion-pop" style="--motion-delay: 55ms;"><div class="num">3</div><div class="lbl">Does the department find it useful enough to continue next semester?</div></div>
     </div>
     <p class="projection-note">Start with high-enrollment courses such as introductory accounting, chemistry, biology, and calculus.</p>
   </div>
@@ -467,5 +763,7 @@
 
 
 
-<script src="motion.js" defer></script>
+
+</div><!-- /page-content -->
 </body></html>
+

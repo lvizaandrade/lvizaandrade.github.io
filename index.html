@@ -4,12 +4,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Luiza Andrade</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
-<link href="subzona-case-study.html" rel="prefetch"/>
-<link href="chegg-ledger-case-study.html" rel="prefetch"/>
-<link href="case-study2.html?v=maps-fast-2" rel="prefetch"/>
+
+
+
+<link href="subzona-case-study.html?v=fast-3" rel="prefetch"/>
+<link href="chegg-ledger-case-study.html?v=fast-3" rel="prefetch"/>
+<link href="case-study2.html?v=fast-3" rel="prefetch"/>
 <style>
   :root{
     --bg: #F6F3EF;
@@ -487,8 +487,91 @@
   }
 
 </style>
-<link href="motion.css" rel="stylesheet"/>
-</head>
+<style>:root{--motion-accent:#b43e51}
+.motion-progress{position:fixed;z-index:10000;top:0;left:0;width:100%;height:3px;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,var(--motion-accent),#e79b75);pointer-events:none}
+.motion-ready .motion-reveal{opacity:0;transform:translateY(28px) scale(.985);transition:opacity .72s cubic-bezier(.2,.75,.25,1),transform .72s cubic-bezier(.2,.75,.25,1);transition-delay:var(--motion-delay,0ms)}
+.motion-ready .motion-reveal.motion-in{opacity:1;transform:none}
+.motion-ready .motion-pop{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease,border-color .35s ease;transform-style:preserve-3d;will-change:transform}
+.motion-ready .motion-pop:hover{transform:translateY(-7px) rotateX(var(--motion-rx,0deg)) rotateY(var(--motion-ry,0deg));box-shadow:0 20px 45px rgba(31,22,23,.13)}
+.motion-ready a,.motion-ready button{transition:transform .22s ease,color .22s ease,background-color .22s ease,border-color .22s ease}
+.motion-ready a:hover,.motion-ready button:hover{transform:translateY(-2px)}
+.motion-ready img{transition:transform .65s cubic-bezier(.2,.8,.2,1),filter .4s ease}
+.motion-ready .motion-pop:hover img,.motion-ready figure:hover img,.motion-ready .phone:hover img{transform:scale(1.025)}
+@media(max-width:800px),(pointer:coarse){.motion-ready .motion-pop:hover{transform:translateY(-4px)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.motion-progress{display:none}.motion-ready .motion-reveal{opacity:1;transform:none;transition:none}.motion-ready *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+<style>@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(assets/font-d76b2b5f397b.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/font-5f9f671b2c58.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/font-c327eacc9d20.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/font-9f49203e2ae8.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/font-949591173c23.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/font-73ee977f3973.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/font-334e1ee15178.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/font-35f7e7e06fa6.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/font-e90966715edc.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/font-425c6feef04d.woff2) format('woff2');
+}
+</style>
+<style>.reveal,.motion-ready .motion-reveal{opacity:1!important;transform:none!important;transition:none!important}.motion-pop{will-change:auto!important}</style></head>
 <body class="" id="artifacts-component-root-html">
 <div aria-hidden="true" class="thread-track">
 <svg preserveaspectratio="none" viewbox="0 0 2 1000">
@@ -584,7 +667,7 @@
 <span>Wireframes</span>
 <span>Usability Testing</span>
 </div>
-<a class="work-link" href="subzona-case-study.html">View Case Study
+<a class="work-link" href="subzona-case-study.html?v=fast-3">View Case Study
           <svg fill="none" height="15" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="15"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
 </a>
 </div>
@@ -597,7 +680,7 @@
 <span>Data Moat</span>
 <span>B2B Pivot</span>
 </div>
-<a class="work-link" href="chegg-ledger-case-study.html">View Case Study
+<a class="work-link" href="chegg-ledger-case-study.html?v=fast-3">View Case Study
           <svg fill="none" height="15" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="15"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
 </a>
 </div>
@@ -610,7 +693,7 @@
 <span>Onboarding Flow</span>
 <span>Engagement Metrics</span>
 </div>
-<a class="work-link" href="case-study2.html?v=maps-fast-2">View Case Study
+<a class="work-link" href="case-study2.html?v=fast-3">View Case Study
           <svg fill="none" height="15" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="15"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
 </a>
 </div>
@@ -647,7 +730,7 @@
 </a>
 </div>
 </div>
-<p style="text-align:center;margin:20px 24px 0;font-size:12px;line-height:1.5;color:var(--sub,#6B5850)">Some front-end design is AI-assisted. All research and concept ideas were developed independently, without AI.</p>
+<p style="text-align:center;margin:20px 24px 0;font-size:14px;line-height:1.6;color:var(--sub,#6B5850)">Some front-end design is AI-assisted. All research and concept ideas were developed independently.</p>
 </footer>
 <script>
   // Mobile nav toggle
@@ -681,5 +764,5 @@
   updateThread();
 
 </script>
-<script src="motion.js" defer></script>
+
 </body></html>

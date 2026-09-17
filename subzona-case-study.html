@@ -6,8 +6,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SubZona: Subleases by Students, for Students · Luiza Andrade</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;0,900;1,500&amp;family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+
 <style>
   :root{
     --red:#AE4230;
@@ -153,16 +153,302 @@
   body.editing [data-ekey]:focus{ outline:1.5px solid var(--navy); background:var(--navy-soft); }
   @media(max-width:600px){ #edit-toolbar{ left:14px; right:14px; justify-content:center; flex-wrap:wrap; } }
 </style>
-<link href="motion.css" rel="stylesheet">
-<link href="case-editorial.css" rel="stylesheet">
+<style>:root{--motion-accent:#b43e51}
+.motion-progress{position:fixed;z-index:10000;top:0;left:0;width:100%;height:3px;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,var(--motion-accent),#e79b75);pointer-events:none}
+.motion-ready .motion-reveal{opacity:0;transform:translateY(28px) scale(.985);transition:opacity .72s cubic-bezier(.2,.75,.25,1),transform .72s cubic-bezier(.2,.75,.25,1);transition-delay:var(--motion-delay,0ms)}
+.motion-ready .motion-reveal.motion-in{opacity:1;transform:none}
+.motion-ready .motion-pop{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease,border-color .35s ease;transform-style:preserve-3d;will-change:transform}
+.motion-ready .motion-pop:hover{transform:translateY(-7px) rotateX(var(--motion-rx,0deg)) rotateY(var(--motion-ry,0deg));box-shadow:0 20px 45px rgba(31,22,23,.13)}
+.motion-ready a,.motion-ready button{transition:transform .22s ease,color .22s ease,background-color .22s ease,border-color .22s ease}
+.motion-ready a:hover,.motion-ready button:hover{transform:translateY(-2px)}
+.motion-ready img{transition:transform .65s cubic-bezier(.2,.8,.2,1),filter .4s ease}
+.motion-ready .motion-pop:hover img,.motion-ready figure:hover img,.motion-ready .phone:hover img{transform:scale(1.025)}
+@media(max-width:800px),(pointer:coarse){.motion-ready .motion-pop:hover{transform:translateY(-4px)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.motion-progress{display:none}.motion-ready .motion-reveal{opacity:1;transform:none;transition:none}.motion-ready *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+<style>
+
+body.case-editorial {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+}
+
+body.case-editorial h1,
+body.case-editorial h2,
+body.case-editorial h3,
+body.case-editorial .h,
+body.case-editorial .h3 {
+  font-family: 'Italiana', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -.025em;
+}
+
+body.case-editorial h1 em,
+body.case-editorial h2 em,
+body.case-editorial .title span,
+body.case-editorial .zona {
+  font-family: 'Italiana', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+body.case-editorial .kicker,
+body.case-editorial .eyebrow,
+body.case-editorial .snum {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+body.case-editorial section[data-chapter] > .wrap,
+body.case-editorial-maps section[data-chapter] {
+  display: grid;
+  grid-template-columns: minmax(92px, .28fr) minmax(0, 1.72fr);
+  column-gap: clamp(28px, 6vw, 82px);
+}
+
+body.case-editorial section[data-chapter] > .wrap::before,
+body.case-editorial-maps section[data-chapter]::before {
+  content: attr(data-chapter);
+  grid-column: 1;
+  grid-row: 1 / span 30;
+  align-self: start;
+  padding-top: 9px;
+  border-top: 1px solid currentColor;
+  color: var(--editorial-accent);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+body.case-editorial section[data-chapter] > .wrap > *,
+body.case-editorial-maps section[data-chapter] > * {
+  grid-column: 2;
+}
+
+body.case-editorial section[data-chapter] .kicker,
+body.case-editorial section[data-chapter] .snum {
+  display: none;
+}
+
+body.case-editorial section[data-chapter] h2 {
+  font-size: clamp(34px, 4.2vw, 58px);
+  line-height: 1.02;
+  max-width: 17ch;
+  margin-bottom: 24px;
+}
+
+body.case-editorial section[data-chapter] p {
+  max-width: 68ch;
+}
+
+body.case-editorial .hero h1,
+body.case-editorial .hero .title {
+  font-size: clamp(58px, 9vw, 112px);
+  line-height: .9;
+}
+
+body.case-editorial .hero::after {
+  content: none;
+}
+
+body.case-editorial .hero {
+  height: 560px;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+body.case-editorial .hero > .wrap,
+body.case-editorial .hero > .hero-inner { width: 100%; }
+
+
+body.case-editorial .summary-card,
+body.case-editorial .beat,
+body.case-editorial .persona,
+body.case-editorial .feature,
+body.case-editorial .rstep,
+body.case-editorial .metric,
+body.case-editorial .engage-cell,
+body.case-editorial .profile-card {
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+body.case-editorial .artifact,
+body.case-editorial .flow,
+body.case-editorial .wireflow,
+body.case-editorial .screens,
+body.case-editorial .hero-visual {
+  position: relative;
+}
+
+body.case-editorial .artifact::after,
+body.case-editorial .flow::after,
+body.case-editorial .wireflow::after {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  right: -8px;
+  top: -8px;
+  width: 34px;
+  height: 24px;
+  border-top: 1px solid var(--editorial-accent);
+  border-right: 1px solid var(--editorial-accent);
+  transform: rotate(5deg);
+  pointer-events: none;
+}
+
+body.case-editorial-chegg {
+  --editorial-accent: #EB7100;
+  background: #FAF8F3;
+}
+
+body.case-editorial-subzona {
+  --editorial-accent: #AE4230;
+  background: #F1E7DC;
+}
+
+body.case-editorial-maps {
+  --editorial-accent: #A9761E;
+  background: #F1E7D6;
+}
+
+body.case-editorial-chegg .title span { color: var(--orange); }
+body.case-editorial-subzona .zona { color: #C9AA9C; }
+body.case-editorial-maps h1 em,
+body.case-editorial-maps h2 em { color: #E7B45A; }
+
+@media (max-width: 720px) {
+  body.case-editorial section[data-chapter] > .wrap,
+  body.case-editorial-maps section[data-chapter] {
+    grid-template-columns: 1fr;
+  }
+  body.case-editorial section[data-chapter] > .wrap::before,
+  body.case-editorial-maps section[data-chapter]::before {
+    grid-column: 1;
+    grid-row: auto;
+    margin-bottom: 20px;
+  }
+  body.case-editorial section[data-chapter] > .wrap > *,
+  body.case-editorial-maps section[data-chapter] > * { grid-column: 1; }
+  body.case-editorial .hero::after { display: none; }
+  body.case-editorial .hero { height: auto; min-height: 520px; }
+}
+</style>
 <style id="subzona-revisions">
 body.case-editorial-subzona section[data-chapter] > .wrap::before{content:none}
 body.case-editorial-subzona section[data-chapter] > .wrap > .chapter-label{grid-column:1;grid-row:1 / span 30;align-self:start;padding-top:9px;border-top:1px solid currentColor;color:var(--editorial-accent);font-family:'DM Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;overflow-wrap:normal}
 .mech-item{display:block;border:0;padding:14px 0}.mech-item h3{font-family:'DM Sans',sans-serif!important;font-weight:500!important;font-size:16px!important;letter-spacing:0!important;margin-bottom:6px}
 @media(max-width:720px){body.case-editorial-subzona section[data-chapter] > .wrap > .chapter-label{grid-row:auto;margin-bottom:20px}}
 </style><style id="subzona-competitors">.competitor-context{margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}.competitor-context h3{font-family:'DM Sans',sans-serif!important;font-size:17px;font-weight:500!important;letter-spacing:0!important;margin:0 0 14px}.competitor-context p{font-size:14px}.competitor-context .competitor-sources{font-size:11px;color:var(--sub)}</style><style>body.case-editorial .motion-reveal{opacity:1!important;transform:none!important;transition:none!important}body.case-editorial .motion-pop{will-change:auto}</style>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&amp;family=Italiana&amp;display=swap" media="print" onload="this.media='all'">
-</head>
+
+<style>@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/font-324d05cbb2e6.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/font-a237c004161d.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/font-c023e515d6d2.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(assets/font-fa43809fd427.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/font-6d95ec6323b2.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/font-2ae9d0b85736.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/font-28a332909d69.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/font-572cbab18079.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/font-2df7bcce9d9d.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/font-334e1ee15178.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/font-6c0f1940c1c2.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/font-2ae9d0b85736.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/font-28a332909d69.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Italiana';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/font-bfce9fdc50e3.woff2) format('woff2');
+}
+</style>
+<style>.reveal,.motion-ready .motion-reveal{opacity:1!important;transform:none!important;transition:none!important}.motion-pop{will-change:auto!important}</style></head>
 <body id="artifacts-component-root-html" class="case-editorial case-editorial-subzona">
 <div id="page-content">
 
@@ -385,6 +671,6 @@ body.case-editorial-subzona section[data-chapter] > .wrap > .chapter-label{grid-
 
 
 </div><!-- /page-content -->
-<script src="motion.js" defer></script>
+
 </body></html>
 
