@@ -253,15 +253,15 @@
   .trend span{width:9px; background:rgba(235,113,0,.25); border-top:2px solid var(--orange);}
   .trend-label{font-family:'IBM Plex Mono', monospace; font-size:10px; color:var(--gray); margin-top:5px;}
 
-  .risk-grid{display:grid; grid-template-columns:repeat(3,minmax(240px,1fr)); gap:18px; margin-top:24px; overflow-x:auto;}
-  .risk-card{border:1px solid var(--line); padding:24px; background:#fff;}
+  .risk-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; margin-top:24px; overflow-x:auto;}
+  .risk-card{border:1px solid var(--line); padding:clamp(14px,2vw,24px); background:#fff;}
   .risk-card .risk-label{font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--orange-deep);}
   .risk-card h3{margin:8px 0 12px;}
   .risk-card p:last-child{margin-bottom:0;}
   .trust-list{display:grid; grid-template-columns:repeat(2,1fr); gap:10px 24px; margin:20px 0 0; padding:0; list-style:none;}
   .trust-list li{border-top:1px solid var(--line); padding:12px 0; font-size:14px;}
   .trust-list li::before{content:'— '; color:var(--orange-deep);}
-  @media(max-width:700px){.trust-list{grid-template-columns:1fr}.ledger-row{grid-template-columns:1fr}.trend{margin-top:4px}}
+  @media(max-width:700px){.risk-grid{grid-template-columns:repeat(3,minmax(240px,1fr))}.trust-list{grid-template-columns:1fr}.ledger-row{grid-template-columns:1fr}.trend{margin-top:4px}}
 
   .metrics-grid{
     display:grid;
