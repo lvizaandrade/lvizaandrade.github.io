@@ -253,7 +253,7 @@
   .trend span{width:9px; background:rgba(235,113,0,.25); border-top:2px solid var(--orange);}
   .trend-label{font-family:'IBM Plex Mono', monospace; font-size:10px; color:var(--gray); margin-top:5px;}
 
-  .risk-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:24px;}
+  .risk-grid{display:grid; grid-template-columns:repeat(3,minmax(240px,1fr)); gap:18px; margin-top:24px; overflow-x:auto;}
   .risk-card{border:1px solid var(--line); padding:24px; background:#fff;}
   .risk-card .risk-label{font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--orange-deep);}
   .risk-card h3{margin:8px 0 12px;}
@@ -261,7 +261,7 @@
   .trust-list{display:grid; grid-template-columns:repeat(2,1fr); gap:10px 24px; margin:20px 0 0; padding:0; list-style:none;}
   .trust-list li{border-top:1px solid var(--line); padding:12px 0; font-size:14px;}
   .trust-list li::before{content:'— '; color:var(--orange-deep);}
-  @media(max-width:700px){.risk-grid,.trust-list{grid-template-columns:1fr}.ledger-row{grid-template-columns:1fr}.trend{margin-top:4px}}
+  @media(max-width:700px){.trust-list{grid-template-columns:1fr}.ledger-row{grid-template-columns:1fr}.trend{margin-top:4px}}
 
   .metrics-grid{
     display:grid;
@@ -730,7 +730,7 @@ body.case-editorial-maps h2 em { color: #E7B45A; }
       <div class="risk-card"><span class="risk-label">Risk 01</span><h3 class="h3">The record gets old</h3><p>Courses change while Chegg's archive grows more slowly.</p><p><strong>Response:</strong> Start with intro STEM and business courses that change slowly. Label every signal by textbook edition and time range.</p></div>
       <div class="risk-card"><span class="risk-label">Risk 02</span><h3 class="h3">Volume is not difficulty</h3><p>A popular problem may get more searches simply because more schools assign it.</p><p><strong>Response:</strong> Do not use searches alone. Flag a concept only when repeat views and Ask an Expert follow-ups grow faster than enrollment-adjusted search volume.</p></div>
 
-      <div class="risk-card"><span class="risk-label">Risk 03</span><h3>Course content becomes outdated</h3><p>New materials and assignments may no longer match the concepts in older textbooks.</p><p><strong>Response:</strong> Let teachers upload current course materials alongside anonymized assignment or quiz results. Ledger could connect missed questions to course concepts and show where students are struggling now.</p></div>
+      <div class="risk-card"><span class="risk-label">Risk 03</span><h3 class="h3">Course content becomes outdated</h3><p>New materials and assignments may no longer match the concepts in older textbooks.</p><p><strong>Response:</strong> Let teachers upload current course materials alongside anonymized assignment or quiz results. Ledger could connect missed questions to course concepts and show where students are struggling now.</p></div>
     </div>
   </div>
 </section>
