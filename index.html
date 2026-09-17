@@ -6,7 +6,7 @@
 <title>Luiza Andrade</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
 <link href="subzona-case-study.html" rel="prefetch"/>
 <link href="chegg-ledger-case-study.html" rel="prefetch"/>
 <link href="case-study2.html" rel="prefetch"/>
@@ -524,7 +524,7 @@
 </div>
 </div>
 <div class="hero-photo reveal" id="heroPhoto">
-<img alt="Portrait of Luiza Andrade" id="heroPhotoImg" src="luiza-photo.jpg"/>
+<img decoding="async" fetchpriority="high" alt="Portrait of Luiza Andrade" id="heroPhotoImg" src="luiza-photo.jpg"/>
 </div>
 </div>
 </section>
@@ -647,6 +647,7 @@
 </a>
 </div>
 </div>
+<p style="text-align:center;margin:20px 24px 0;font-size:12px;line-height:1.5;color:var(--sub,#6B5850)">Some front-end design is AI-assisted. Research and concepts developed independently.</p>
 </footer>
 <script>
   // Mobile nav toggle
@@ -680,5 +681,5 @@
   updateThread();
 
 </script>
-<script src="motion.js"></script>
+<script src="motion.js" defer></script>
 </body></html>

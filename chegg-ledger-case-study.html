@@ -7,7 +7,7 @@
 <title>Chegg Ledger — Product Case Study</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&amp;family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&amp;family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <style>
   :root{
     --orange:#EB7100;
@@ -323,6 +323,8 @@
 </style>
 <link href="motion.css" rel="stylesheet">
 <link href="case-editorial.css" rel="stylesheet">
+<style>body.case-editorial .motion-reveal{opacity:1!important;transform:none!important;transition:none!important}body.case-editorial .motion-pop{will-change:auto}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&amp;family=Italiana&amp;display=swap" media="print" onload="this.media='all'">
 </head>
 <body id="artifacts-component-root-html" class="case-editorial case-editorial-chegg">
 
@@ -338,7 +340,7 @@
       <div class="meta-item"><span class="label">Buyer</span><span class="value">Academic departments and publishers</span></div>
     </div>
     </div>
-    <figure class="hero-shot"><img src="chegg-ledger-overview.png" alt="Chegg Ledger educator landing page with concept trends, teaching practices, and pilot results"></figure>
+    <figure class="hero-shot"><img decoding="async" fetchpriority="high" src="chegg-ledger-overview.png" alt="Chegg Ledger educator landing page with concept trends, teaching practices, and pilot results"></figure>
   </div>
 </header>
 
@@ -409,7 +411,7 @@
     <div class="kicker">What an Instructor Sees</div>
     <h2 class="h">The ledger</h2>
     <p><strong>Ask Ledger</strong> lets an instructor ask simple questions like “How does this compare to last fall?” It searches and explains the existing archive. It does not create new data or make the underlying signal stronger.</p>
-    <figure class="ledger-shot"><img src="chegg-ledger-dashboard.png" alt="Chegg Ledger dashboard with Ask Ledger, concept alerts, trends, and instructor comparisons"></figure>
+    <figure class="ledger-shot"><img decoding="async" loading="lazy" src="chegg-ledger-dashboard.png" alt="Chegg Ledger dashboard with Ask Ledger, concept alerts, trends, and instructor comparisons"></figure>
     <p>Ledger does not treat a popular search as proof that students struggled. A concept is flagged only when repeat views and Ask an Expert follow-ups rise faster than enrollment-adjusted search volume. That helps separate “everyone was assigned this” from “students kept coming back because they were stuck.”</p>
   </div>
 </section>
@@ -465,5 +467,5 @@
 
 
 
-<script src="motion.js"></script>
+<script src="motion.js" defer></script>
 </body></html>
